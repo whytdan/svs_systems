@@ -26,7 +26,7 @@ SECRET_KEY = 'yx4u=50iwya_4(x_96)*f_5a!6!%xrb$rrbmy!*yy2p@)_)h)^'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'ba2fbc7b2206.ngrok.io']
+ALLOWED_HOSTS = ['localhost', '164.90.160.5', '127.0.0.1']
 
 # Application definition
 
@@ -61,8 +61,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'src.urls'
 
@@ -140,3 +138,9 @@ STATIC_URL = '/staticfiles/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://164.90.160.5',
+    'http://localhost:3000'
+]

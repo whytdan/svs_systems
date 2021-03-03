@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+    backend:
+      restart: unless-stopped
+      build:
+        context: .
+        dockerfile: ./docker/backend/Dockerfile
+      volumes:
+          - static_volume:/app/backend/src/staticfiles
+          - media_volume:/app/backend/src/media
+      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+      networks:
+        - my-network
+
+    nginx:
+      restart: unless-stopped
+      build:
+        context: .
+        dockerfile: ./docker/nginx/Dockerfile
+      ports:
+        - 80:80
+      volumes:
+        - ./docker/nginx:/etc/nginx/conf.d
+        - static_volume:/app/backend/src/staticfiles
+        - media_volume:/app/backend/src/media
+      networks:
+        - my-network
+      depends_on:
+        - backend
+
+volumes:
+  static_volume:
+  media_volume:
+
+networks:
+  my-network:
