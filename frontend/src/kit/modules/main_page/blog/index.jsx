@@ -33,7 +33,6 @@ export default function Blog(props) {
               <CardImg img={post.images[0].file} />
               <CardBody>
                 <h3>{post.title}</h3>
-
                 <p>
                   <Truncate lines={3} ellipsis={'...'}>
                     <span dangerouslySetInnerHTML={{

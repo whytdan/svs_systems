@@ -18,11 +18,17 @@ export const CardWrapper = styled.div`
   margin-top: 30px;
   padding-left: 15px;
   padding-right: 15px;
+  @media (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 export const Card = styled.div`
   height: auto;
   padding: 25px 17px 40px 30px;
+  @media (max-width: 600px) {
+    padding: 25px 0px 40px 0px;
+  }
   text-align: center;
   color: #fff;
   max-width: 400px;
@@ -56,6 +62,11 @@ export const CardBody = styled.div`
   line-height: 28px;
   ul {
     list-style-type: circle;
+  }
+
+  @media (max-width: 600px){
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   ul li {
