@@ -1,152 +1,62 @@
-import React from 'react';
+import { Grid, makeStyles } from '@material-ui/core';
+import React, { useContext, useEffect } from 'react';
+import { mainDataContext } from '../../../../contexts/MainDataContext';
 import Section from '../../../components/section';
 import {
   Wrapper,
   SectionHeader,
-  SectionText,
-  LanguagesLists,
   List,
 } from './styles';
 
 // TODO: How to render language lists???
 
-export default function Languages({service}) {
+const useStyles = makeStyles({
+  languageServices: {
+    maxWidth: 350,
+    margin: 30
+  },
+  container: {
+    maxWidth: 1440,
+    margin: '0 auto'
+  }
+})
+
+export default function Languages({ service }) {
+
+  const classes = useStyles();
+  const { fetchLanguages, languages } = useContext(mainDataContext);
+
+  useEffect(() => {
+    fetchLanguages()
+  }, [])
+
   return (
-    <Section bg_img='/images/languages-bg.jpg'>
+    <Section bg_img='/images/bg-2.jpg'>
       <Wrapper>
-        <div>
-          <SectionHeader>
-            <span>{service}</span> 
-          </SectionHeader>
-          <SectionText>
-            Quisque molestie tincidunt urna nec bibend um. Fusce eleifend
-            sodales orci, at malesuada mauris fri ngilla imperdiet. Maecenas
-            dolor elit ul trices ligula ut, fringilla facilisis diam. Nullam
-            laoreet nulla sem, et malesua.
-          </SectionText>
-        </div>
-        <LanguagesLists>
-          <List>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-          </List>
-          <List>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-          </List>
-          <List>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-          </List>
-          <List>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-            <li>
-              <img src='/icons/arrow-right.png' alt='arrow' />
-              <span>English</span>
-            </li>
-          </List>
-        </LanguagesLists>
+        <Grid container spacing={3} justify="center" className={classes.container}>
+
+          {
+            languages?.length && languages.map(language => (
+              <Grid item xs={12} md={6} className={classes.languageServices} key={language.id}>
+                <SectionHeader>
+                  <span>{language.title}</span>
+                </SectionHeader>
+
+                <List>
+                  {
+                    language.services.map(service => (
+                      <li key={service.id}>
+                        <img src='/icons/arrow-right.png' alt='arrow' />
+                        <span>{service.title}</span>
+                      </li>
+                    ))
+                  }
+                </List>
+              </Grid>
+            ))
+          }
+
+        </Grid>
       </Wrapper>
     </Section>
   );

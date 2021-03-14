@@ -277,25 +277,24 @@ class Service5(models.Model):
 #         return self.title
 
 
-class LanguagesSection(models.Model):
+class LanguageServicesList(models.Model):
     title = models.CharField('Заголовок', max_length=255)
-    description = models.TextField('Описание')
 
     class Meta:
-        verbose_name = 'Секция языков'
-        verbose_name_plural = 'Секции языков'
+        verbose_name = 'Список услуг для языков'
+        verbose_name_plural = 'Списки услуг для языков'
 
     def __str__(self):
         return self.title
 
 
-class Language(models.Model):
-    title = models.CharField('Язык', max_length=255)
-    section = models.ForeignKey(LanguagesSection, on_delete=models.CASCADE, related_name='languages')
+class LanguageService(models.Model):
+    title = models.CharField('Название услуги', max_length=255)
+    service_list = models.ForeignKey(LanguageServicesList, on_delete=models.CASCADE, related_name='services')
 
     class Meta:
-        verbose_name = 'Язык'
-        verbose_name_plural = 'Языки'
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
 
     def __str__(self):
         return self.title

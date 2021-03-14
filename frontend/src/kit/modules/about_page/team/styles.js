@@ -24,11 +24,16 @@ export const Card = styled.div`
   grid-auto-flow: row;
   min-height: 430px;
   height: auto;
+  background-color: #cfd8dc;
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29); 
+  box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+
 
 `;
 
 export const CardAvatar = styled.div`
-  background: #fff;
+  /* background: #fff; */
   width: 100%;
   height: auto;
 `;
@@ -41,14 +46,14 @@ export const CardAvatarImage = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   background-position: top;
   background-position-x: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 
 `;
 
 export const CardInfo = styled.div`
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   padding: 25px 30px;
   h3 {
     color: #353434 !important;

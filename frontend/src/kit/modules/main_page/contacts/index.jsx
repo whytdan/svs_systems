@@ -9,7 +9,7 @@ export default function Contacts(props) {
       <ContactsWrapper>
         <Contact>
           <img src='/icons/location.png' alt='map-pin' />
-          <p>Фрунзе, 458</p>
+          <p>Кыргызстан, г.Бишкек, ул. Фрунзе, 458</p>
         </Contact>
         <Contact>
           <img src='/icons/mail.png' alt='map-pin' />

@@ -33,7 +33,7 @@ export default function Header(props) {
       <ScrollHeader show={scrollHeader} />
       <StyledHeader bg_img='/images/header-bg2.jpg'>
         <Backdrop>
-          <UpperHeader open={openMenu} setOpenMenu={setOpenMenu} />
+          <UpperHeader scrolled={scrollHeader} isLanguagesPage={props.isLanguagesPage} open={openMenu} setOpenMenu={setOpenMenu} />
           <BottomHeader bottom_header={props.bottom_header} />
         </Backdrop>
       </StyledHeader>

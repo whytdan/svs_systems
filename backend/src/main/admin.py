@@ -102,13 +102,13 @@ class FifthServiceSectionAdmin(admin.ModelAdmin):
     inlines = [Service5Inline]
 
 
-class LanguageInline(admin.TabularInline):
-    model = Language
+class LanguageServiceInline(admin.TabularInline):
+    model = LanguageService
 
 
-class LanguagesSectionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', )
-    inlines = [LanguageInline,]
+class LanguageServicesListAdmin(admin.ModelAdmin):
+    list_display = ('title', )
+    inlines = [LanguageServiceInline,]
 
 
 class AboutUsAdmin(admin.ModelAdmin):
@@ -126,4 +126,4 @@ admin.site.register(SecondServiceSection, SecondServiceSectionAdmin)
 admin.site.register(ThirdServiceSection, ThirdServiceSectionAdmin)
 admin.site.register(FourthServiceSection, FourthServiceSectionAdmin)
 admin.site.register(FifthServiceSection, FifthServiceSectionAdmin)
-admin.site.register(LanguagesSection, LanguagesSectionAdmin)
+admin.site.register(LanguageServicesList, LanguageServicesListAdmin)

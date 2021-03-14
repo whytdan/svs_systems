@@ -7,17 +7,10 @@ import Languages from '../main_page/languages';
 
 export default function LanguagesPage() {
   return (
-    <Layout bottom_header={false}>
+    <Layout bottom_header={false} isLanguagesPage={true}>
       <main>
-        {/* <LocalizationServices/>
-        <OnTimeDelivery/>
-        <LanguageTraining/> */}
-
-        <Languages service={"КОНЦЕПТУАЛЬНЫЕ ВОПРОСЫ"}/>
+        <Languages service={"Английский/русский язык "}/>
         <div style={{height: 100, backgroundColor:'#CFD8DB'}}></div>
-        <Languages service={"ТЕХНИКА И АППАРАТУРА"}/>
-        <div style={{height: 100, backgroundColor:'#CFD8DB'}}></div>
-        <Languages service={"ДРУГИЕ УСЛУГИ"}/>
       </main>
     </Layout>
   );

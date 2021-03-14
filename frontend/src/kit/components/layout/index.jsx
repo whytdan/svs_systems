@@ -6,7 +6,7 @@ import ScrollUp from '../scroll_up';
 export default function Layout(props) {
   return (
     <div>
-      <Header bottom_header={props.bottom_header}/>
+      <Header bottom_header={props.bottom_header} isLanguagesPage={props.isLanguagesPage}/>
       {props.children}
       
       <ScrollUp />

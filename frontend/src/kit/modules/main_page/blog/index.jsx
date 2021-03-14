@@ -28,7 +28,7 @@ export default function Blog(props) {
 
         {
           mainPosts && mainPosts.map(post => (
-          <Link to={`/blog/${post.id}`}>
+          <Link to={`/blog/${post.id}`} key={post.id}>
             <Card>
               <CardImg img={post.images[0].file} />
               <CardBody>
@@ -36,10 +36,10 @@ export default function Blog(props) {
 
                 <p>
                   <Truncate lines={3} ellipsis={'...'}>
-                    <div dangerouslySetInnerHTML={{
+                    <span dangerouslySetInnerHTML={{
                       __html: post.description
                     }}>
-                    </div>
+                    </span>
                   </Truncate>
                 </p>
               </CardBody>
@@ -51,43 +51,6 @@ export default function Blog(props) {
           </Link>
           ))
         }
-
-
-
-        {/* <Card>
-          <CardImg img='/images/card_img.jpg' />
-          <CardBody>
-            <Link to='/'>
-              <h3>Vestibulum iaculis lacinia</h3>
-            </Link>
-            <p>
-              Vestibulum eget nunc eget leo fermentum imp erdiet. Quisque sit
-              amet ligula porta, tempus ante nec, varius nisi. Nunc mollis
-              vulputate tortor quis pharetra. Nam viverra nulla dolor
-            </p>
-          </CardBody>
-          <CardFooter>
-            <img src='/icons/calendar.svg' alt='calendar' />
-            <span>July 9, 2015 </span>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardImg img='/images/card_img.jpg' />
-          <CardBody>
-            <Link to='/'>
-              <h3>Vestibulum iaculis lacinia</h3>
-            </Link>
-            <p>
-              Vestibulum eget nunc eget leo fermentum imp erdiet. Quisque sit
-              amet ligula porta, tempus ante nec, varius nisi. Nunc mollis
-              vulputate tortor quis pharetra. Nam viverra nulla dolor
-            </p>
-          </CardBody>
-          <CardFooter>
-            <img src='/icons/calendar.svg' alt='calendar' />
-            <span>July 9, 2015 </span>
-          </CardFooter>
-        </Card> */}
       </Cards>
 
       <Link to="/blog">

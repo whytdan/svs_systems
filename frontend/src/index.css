@@ -98,3 +98,12 @@ textarea {
   color: #4f4f4f;
   font-weight: normal;
 }
+
+
+.Toastify__toast--success{
+  font-size: 16px;
+}
+
+.Toastify__toast--error{
+  font-size: 16px;
+}

@@ -93,17 +93,17 @@ class FifthServiceSectionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class LanguageSerializer(serializers.ModelSerializer):
+class LanguageServiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Language
+        model = LanguageService
         fields = '__all__'
 
 
-class LanguagesSectionSerializer(serializers.ModelSerializer):
-    languages = LanguageSerializer(many=True, read_only=True)
+class LanguageServicesListSerializer(serializers.ModelSerializer):
+    services = LanguageServiceSerializer(many=True, read_only=True)
 
     class Meta:
-        model = LanguagesSection
+        model = LanguageServicesList
         fields = '__all__'
-        extra_fields = ['languages']
+        extra_fields = ['services']
 

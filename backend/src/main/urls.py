@@ -14,6 +14,6 @@ router.register('second-service', views.SecondServiceSectionViewset)
 router.register('third-service', views.ThirdServiceSectionViewset)
 router.register('fourth-service', views.FourthServiceSectionViewset)
 router.register('fifth-service', views.FifthServiceSectionViewset)
-router.register('languages', views.LanguagesSectionViewset)
+router.register('languages', views.LanguageServicesViewset)
 
 urlpatterns = router.urls

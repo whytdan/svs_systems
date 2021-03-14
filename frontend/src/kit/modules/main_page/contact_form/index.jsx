@@ -5,8 +5,8 @@ import Form from '../../../components/form';
 
 export default function ContactForm(props) {
   return (
-    <Section bg_color='darkgrey'>
-      <SectionHeader color='white'>
+    <Section bg_color='lightgrey'>
+      <SectionHeader color='grey'>
         <span>Форма</span> заявки
         <Form />
       </SectionHeader>

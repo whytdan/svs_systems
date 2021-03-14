@@ -7,8 +7,9 @@ export const StyledSection = styled.section`
     props.bg_color === 'lightgrey'
       ? '#cfd8dc'
       : 'darkgrey'
-      ? '#525252'
+      ? '#4f4f4f' 
       : '#ffffff'};
+      /* 525252 */
   background-image: ${(props) => `url(${props.bg_img})`};
   background-position: center;
   background-repeat: no-repeat;

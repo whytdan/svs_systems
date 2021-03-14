@@ -13,6 +13,9 @@ export default function Footer() {
         <a href='https://www.instagram.com/svs_systems.kg/' target="_blank">
           <LogoImg src='/icons/instagram.svg' alt='instagram-logo' />
         </a>
+        <a href='https://www.instagram.com/svs_systems.kg/' target="_blank">
+          <LogoImg src='/icons/telegram.svg' alt='telegram-logo' />
+        </a>
       </FooterLinks>
       <Copyright>SVS systems © 2021 • Privacy Policy</Copyright>
     </StyledFooter>

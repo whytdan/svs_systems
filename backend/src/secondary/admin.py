@@ -14,5 +14,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at', 'description', )
     inlines = [PostImageInline]
 
+class ApplicationRequestAdmin(admin.ModelAdmin):
+    list_display = ('sender', 'phone_number', 'email', 'message', )
+
+
 admin.site.register(PortfolioProject, PortfolioProjectAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(ApplicationRequest, ApplicationRequestAdmin)

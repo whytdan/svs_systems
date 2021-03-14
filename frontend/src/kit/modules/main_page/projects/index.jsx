@@ -47,7 +47,7 @@ export default function Projects(props) {
         <ProjectsCards>
           {
             ourProjectsSectionData?.projects.map(project => (
-              <Link to={`/portfolio/${project.id}`}>
+              <Link key={project.id} to={`/portfolio/${project.id}`}>
                 <ProjectCard key={project.id} data={project} />
               </Link>
             ))

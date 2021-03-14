@@ -1,80 +1,232 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import InputMask from "react-input-mask";
 import * as Yup from 'yup';
 
 import {
-  Input,
-  Textarea,
   Button,
-  ErrorMessage,
-  StyledForm,
-  InputsWrapper,
 } from './styles';
+import { FormGroup, makeStyles, withStyles, MenuItem, TextField } from '@material-ui/core';
+import TextError from './TextError';
+import axios from 'axios';
+import { API } from '../../../constants';
+import { ToastContainer, toast } from 'react-toastify';
 
-export default function Form(props) {
-  const formik = useFormik({
-    initialValues: {
-      fullName: '',
-      phone: '',
-      message: '',
+const useStyles = makeStyles({
+  form: {
+    maxWidth: 700,
+    margin: '30px auto 0',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  formInputWrapper: {
+    marginBottom: 30
+  }
+})
+
+
+const CustomTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: '#4f4f4f',
     },
-    validationSchema: Yup.object({
-      fullName: Yup.string().required('Это обязательное поле'),
-      phone: Yup.string()
-        .min(12, 'Введите номер телефона в формате 0ХХХ ХХХ ХХХ')
-        .required('Это обязательное поле'),
-      message: Yup.string().required('Это обязательное поле'),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#34dce3',
     },
+  },
+})(TextField);
+
+const notifyRequestSent = () => {
+  toast("Ваш запрос успешно отправлен!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    newestOnTop: false,
+    closeOnClick: true,
+    rtl: false,
+    pauseOnFocusLoss: true,
+    draggable: true,
+    pauseOnHover: true,
+    type: 'success'
   });
+}
+
+const notifyRequestDecline = () => {
+  toast("Что-то пошло не так!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    newestOnTop: false,
+    closeOnClick: true,
+    rtl: false,
+    pauseOnFocusLoss: true,
+    draggable: true,
+    pauseOnHover: true,
+    type: 'error'
+  });
+}
+
+export default function ApplicationForm(props) {
+
+  const classes = useStyles();
+
+  const initialValues = {
+    fullName: '',
+    contactType: 'PHONE_NUMBER',
+    phoneNumber: '',
+    email: '',
+    message: '',
+  }
+
+  const validationSchema = Yup.object({
+    fullName: Yup.string().required('Это обязательное поле'),
+    phoneNumber: Yup.string().required('Это обязательное поле'),
+    phoneNumber: Yup.string().when('contactType', {
+      is: 'PHONE_NUMBER',
+      then: Yup.string().required("Обязательное поле!")
+    }),
+    email: Yup.string().when('contactType', {
+      is: 'EMAIL',
+      then: Yup.string().email('Не верный формат email').required('Это обязательное поле')
+    }),
+    message: Yup.string().required('Это обязательное поле'),
+  })
+
+  const onSubmit = (values, {resetForm}) => {
+    axios.post(`${API}/api/secondary/application-requests/`, {
+      sender: values.fullName,
+      phone_number: values.phoneNumber,
+      email: values.email,
+      message: values.message
+    }).then(() => {
+      notifyRequestSent();
+      resetForm();
+    }).catch(() => {
+      notifyRequestDecline()
+      resetForm();
+    })
+  }
+
+  const contactTypes = [
+    {
+      id: "PHONE_NUMBER",
+      value: "PHONE_NUMBER",
+      label: "Телефон"
+    },
+    {
+      id: "EMAIL",
+      value: "EMAIL",
+      label: "Почта"
+    }
+  ]
 
   return (
-    <StyledForm onSubmit={formik.handleSubmit}>
-      <InputsWrapper>
-        <div>
-          <Input
-            id='fullName'
-            name='fullName'
-            type='text'
-            placeholder='Фио'
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.fullName}
-          />
-          {formik.touched.fullName && formik.errors.fullName ? (
-            <ErrorMessage for='fullName'>{formik.errors.fullName}</ErrorMessage>
-          ) : null}
-        </div>
-        <div>
-          <Input
-            id='phone'
-            name='phone'
-            type='text'
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.phone}
-            placeholder='Номер телефона'
-          />
-          {formik.touched.phone && formik.errors.phone ? (
-            <ErrorMessage for='phone'>{formik.errors.phone}</ErrorMessage>
-          ) : null}
-        </div>
-      </InputsWrapper>
-      <Textarea
-        id='message'
-        name='message'
-        type='message'
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.message}
-        placeholder='Ваше сообщение'
-      />
-      {formik.touched.message && formik.errors.message ? (
-        <ErrorMessage for='message'>{formik.errors.message}</ErrorMessage>
-      ) : null}
-      <Button type='submit'>Отправить</Button>
-    </StyledForm>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+
+      {({
+        values,
+        setFieldValue
+      }) => (
+        <>
+        <Form className={classes.form}>
+
+          <div className={classes.formInputWrapper}>
+            <Field
+              name="fullName"
+              as={CustomTextField}
+              label="ФИО"
+              fullWidth
+              style={{ fontFamily: "'Ubuntu', sans-serif", }}
+            />
+
+            <ErrorMessage component={TextError} name="fullName" />
+          </div>
+
+          <FormGroup className={classes.formInputWrapper}>
+            <Field
+              component={CustomTextField}
+              type="text"
+              name="contactType"
+              label="Как нам с вами связаться?"
+              select
+              fullwidth="true"
+              style={{ textAlign: 'left', fontFamily: "'Ubuntu', sans-serif" }}
+              value={values.contactType}
+              onChange={(e) => setFieldValue("contactType", e.target.value)}
+            >
+              {
+                contactTypes.map(type => (
+                  <MenuItem
+                    styles={{ marginTop: 10 }}
+                    key={type.value}
+                    value={type.value}
+                  >
+                    {type.label}
+                  </MenuItem>
+                ))
+              }
+            </Field>
+          </FormGroup>
+
+          {
+            values.contactType === 'PHONE_NUMBER' ? (
+              <div className={classes.formInputWrapper}>
+                <Field name="phoneNumber">
+                  {({ field }) => (
+                    <InputMask {...field} mask="+\9\96 999 999 999">
+                      {(innerProps) => (
+                        <CustomTextField
+                        {...innerProps}
+                          style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                          label="Номер телефона"
+                          fullWidth
+                        />
+                      )}
+                    </InputMask>
+                  )}
+                </Field>
+                <ErrorMessage component={TextError} name="phoneNumber" />
+              </div>
+            ) : null
+          }
+          
+          {
+            values.contactType === 'EMAIL' ? (
+              <div className={classes.formInputWrapper}>
+                <Field
+                  name="email"
+                  as={CustomTextField}
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                  label="Email"
+                  fullWidth
+                />
+                <ErrorMessage component={TextError} name="email" />
+              </div>
+            ) : null
+          }
+          
+          <div className={classes.formInputWrapper}>
+            <Field
+              name="message"
+              as={CustomTextField}
+              label="Сообщение"
+              style={{ fontFamily: "'Ubuntu', sans-serif" }}
+              fullWidth
+              multiline
+              rows={8}
+            />
+            <ErrorMessage component={TextError} name="message" />
+          </div>
+
+          <Button type='submit'>Отправить</Button>
+        </Form>
+      <ToastContainer />
+      </>
+      )}
+    </Formik>
   );
 }

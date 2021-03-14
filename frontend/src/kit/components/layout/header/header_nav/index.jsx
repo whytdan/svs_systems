@@ -2,7 +2,7 @@ import React from 'react';
 import NavLink from '../navlink';
 import { StyledNav } from './styles';
 
-export default function HeaderNav(props) {
+export default function HeaderNav() {
   return (
     <StyledNav>
       <ul>
