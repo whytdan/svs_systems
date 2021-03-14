@@ -13,7 +13,8 @@ export const StyledNav = styled.nav`
     li {
       a {
         text-transform: uppercase;
-        color: #ffffff;
+        /* color: #ffffff; */
+        /* color: #4f4f4f; */
         font-size: 18px;
         transition: 0.3s;
         &:hover {

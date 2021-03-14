@@ -8,11 +8,16 @@ export const StyledUpperHeader = styled.div`
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  padding: ${(props) => (props.scrolled === true ? '10px 83px' : '40px 83px')};
+  padding: ${(props) => (props.scrolled === true ? '10px 83px' : '15px 83px')};
   min-width: 300px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  /* background-color: ${(props) =>
+    props.scrolled === true ? '#CFD8DB' : 'none'}; */
+
   background-color: ${(props) =>
-    props.scrolled === true ? '#4f4f4f' : 'none'};
+    props.scrolled === true || props.isLanguagesPage === true ? '#4f4f4f' : 'none'};
+
+  /* background-color: #4f4f4f; */
 
   @media (max-width: 425px) {
     justify-content: space-around;

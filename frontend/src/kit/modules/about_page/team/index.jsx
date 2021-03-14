@@ -30,7 +30,7 @@ export default function Team() {
       <Cards>
         {
           ourTeam?.team_members.map(member => (
-            <Card>
+            <Card key={member.id}>
               <CardAvatar >
                 <CardAvatarImage img={member.image} />
               </CardAvatar>

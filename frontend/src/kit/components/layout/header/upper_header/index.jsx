@@ -6,7 +6,7 @@ import PT from 'prop-types';
 // import MenuIcon from '@material-ui/icons/Menu';
 export default function UpperHeader(props) {
   return (
-    <StyledUpperHeader scrolled={props.scrolled}>
+    <StyledUpperHeader scrolled={props.scrolled} isLanguagesPage={props.isLanguagesPage}>
       <StyledLogo>
         <Link to='/'>
           <img src='/images/svs-systems-logo.png' alt='logo' />
@@ -15,7 +15,7 @@ export default function UpperHeader(props) {
           </h2> */}
         </Link>
       </StyledLogo>
-      <HeaderNav />
+      <HeaderNav scrolled={props.scrolled} />
 
       <img src="/icons/menu.png" alt="menu" onClick={() => props.setOpenMenu(!props.open)} />
 

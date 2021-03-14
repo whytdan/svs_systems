@@ -8,7 +8,7 @@ export default function NavLink(props) {
       getProps={({ isCurrent }) => {
         return {
           style: {
-            color: isCurrent ? '#15c3cb' : '#ffffff',
+            color: isCurrent ? '#15c3cb' : props.scrolled === true ? '#fff' : '#fff',
           },
         };
       }}

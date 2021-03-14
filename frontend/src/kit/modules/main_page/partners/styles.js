@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Section = styled.div`
   padding: 40px 83px;
-  background-color: #4f4f4f;
+  background-color: #cfd8dc;
+  /* border-top: 1px solid #4f4f4f; */
   @media (max-width: 700px) {
     padding: 30px 23px;
   }
@@ -33,9 +34,10 @@ export const CustomersWrapper = styled.div`
 `;
 
 export const CustomerLogoHorizontal = styled.div`
-  opacity: 0.6;
+  opacity: 1;
   cursor: pointer;
   img {
+    transition: 0.5s;
     height: 65px;
     @media (max-width: 700px) {
       height: 55px;
@@ -46,16 +48,17 @@ export const CustomerLogoHorizontal = styled.div`
     @media (max-width: 450px) {
       height: 40px;
     }
-  }
-  &:hover {
-    opacity: 1;
+    &:hover {
+      box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+      opacity: 1;
+    }
   }
 `;
 
 export const CustomerLogoVertical = styled.div`
-  opacity: 0.6;
   cursor: pointer;
   img {
+    transition: 0.5s;
     height: 80px;
     @media (max-width: 700px) {
       height: 70px;
@@ -66,8 +69,9 @@ export const CustomerLogoVertical = styled.div`
     @media (max-width: 450px) {
       height: 55px;
     }
-  }
-  &:hover {
-    opacity: 1;
+    &:hover {
+      box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+      opacity: 1;
+    }
   }
 `;

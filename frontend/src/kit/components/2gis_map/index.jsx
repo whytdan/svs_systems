@@ -15,7 +15,7 @@ export default function TwoGisMap() {
 
     useEffect(()=>{
         if(map){
-            addMarker(x,y, "Фрунзе, 458, SVS systems ");
+            addMarker(x,y, "Кыргызстан, г.Бишкек, ул. Фрунзе, 458, SVS systems ");
         }
     },[map])
     

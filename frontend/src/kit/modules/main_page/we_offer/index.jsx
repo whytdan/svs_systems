@@ -13,7 +13,7 @@ import {
 import OffersAdminModal from './OffersAdminModal';
 import { mainDataContext } from '../../../../contexts/MainDataContext';
 
-export default function WeOffer(props) {
+export default function WeOffer() {
 
   const { fetchOffersSectionData, offersSectionData } = useContext(mainDataContext);
 
@@ -27,7 +27,6 @@ export default function WeOffer(props) {
       <OffersAdminModal/>
 
       <SectionHeader color='grey'>
-        {/* <span>Что</span> мы можем предложить */}
         {offersSectionData?.title}
       </SectionHeader>
 
@@ -37,12 +36,11 @@ export default function WeOffer(props) {
       <ServicesBlock>
         {
           offersSectionData?.offers.map(offer => (
-            <ServiceCard>
+            <ServiceCard key={offer.id}>
               <CardIcon>
                 <img src={offer.icon} alt='eye' />
               </CardIcon>
               <CardTitle>
-                {/* Перевод <span>Документов</span> */}
                 {offer.title}
               </CardTitle>
               <CardText>
