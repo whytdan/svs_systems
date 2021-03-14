@@ -5,6 +5,12 @@ from .models import *
 class MainPageSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
+
 
 class OfferInline(admin.TabularInline):
     model = Offer
@@ -16,6 +22,12 @@ class OfferInline(admin.TabularInline):
 class OfferSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
     inlines = [OfferInline]
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
 
 
 class EventOrganizationInline(admin.TabularInline):
@@ -29,6 +41,12 @@ class EventOrganizationSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
     inlines = [EventOrganizationInline]
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
+
 
 class TeamMemberInline(admin.TabularInline):
     model = TeamMember
@@ -38,9 +56,21 @@ class OurTeamSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
     inlines = [TeamMemberInline]
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
+
 
 class OurProjectsSectionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
 
 
 
@@ -113,6 +143,12 @@ class LanguageServicesListAdmin(admin.ModelAdmin):
 
 class AboutUsAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', )
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request):
+        return False
 
 
 admin.site.register(MainPageSection, MainPageSectionAdmin)
