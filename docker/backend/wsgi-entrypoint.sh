@@ -13,4 +13,4 @@ done
 
 ./manage.py collectstatic --noinput
 
-gunicorn crm.wsgi --bind 0.0.0.0:8000 --workers 2 --threads 2
+gunicorn src.wsgi --bind 0.0.0.0:8000 --workers 2 --threads 2
