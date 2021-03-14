@@ -19,8 +19,8 @@ class OfferSection(models.Model):
     description = models.TextField('Описание')
 
     class Meta:
-        verbose_name = 'Страница предложений'
-        verbose_name_plural = 'Страница предложений'
+        verbose_name = 'Секция предложений'
+        verbose_name_plural = 'Секция предложений'
 
     def __str__(self):
         return self.title
