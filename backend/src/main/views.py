@@ -58,6 +58,6 @@ class FifthServiceSectionViewset(mixins.ListModelMixin, viewsets.GenericViewSet)
     serializer_class = FifthServiceSectionSerializer
 
 
-class LanguagesSectionViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = LanguagesSection.objects.all()
-    serializer_class = LanguagesSectionSerializer
+class LanguageServicesViewset(mixins.ListModelMixin, viewsets.GenericViewSet):
+    queryset = LanguageServicesList.objects.all()
+    serializer_class = LanguageServicesListSerializer

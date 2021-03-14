@@ -23,3 +23,11 @@ class PostSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_fields = ['images']
 
+
+
+class ApplicationRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ApplicationRequest
+        fields = '__all__'
+
+    

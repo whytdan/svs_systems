@@ -45,3 +45,17 @@ class PostImage(models.Model):
         verbose_name = 'Изоброжение поста'
         verbose_name_plural = 'Изоброжения постов'
 
+
+class ApplicationRequest(models.Model):
+    sender = models.CharField("ФИО Отправителя", max_length=255)
+    email = models.CharField("Email отправителя", max_length=255, blank=True, null=True)
+    phone_number = models.CharField("Номер отправителя", max_length=255, blank=True, null=True)
+    message = models.TextField("Сообщение отправителя")
+
+    def __str__(self):
+        return f'Сообщение от {self.sender}'
+
+    class Meta:
+        verbose_name = 'Сообщение клиента'
+        verbose_name_plural = 'Сообщения клиентов'
+
