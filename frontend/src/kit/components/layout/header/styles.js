@@ -4,24 +4,21 @@ export const StyledHeader = styled.header`
   width: 100%;
   height: auto;
   position: relative;
-  /* background-color: #ccc;
-  background-image: ${(props) => `url(${props.bg_img})`};
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover; */
-  /* backdrop-filter: blur(30px); */
-
-  /* filter: blur(10px); */
+  
   &:before{
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background-image: ${(props) => `url(${props.bg_img})`};
-    filter: brightness(80%);
+    filter: brightness(40%);
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover; 
+    @media (max-width: 425px) {
+      background-position-x: left;
+      background-position-y: center;
+    }
   }
   
 `;

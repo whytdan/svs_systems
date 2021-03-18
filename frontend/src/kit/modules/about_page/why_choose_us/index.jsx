@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
   }, [])
 
   return (
-    <Section bg_color='lightgrey'>
+    <Section bg_color='white'>
       <SectionHeader color='grey'>
         {aboutUs?.title}
       </SectionHeader>

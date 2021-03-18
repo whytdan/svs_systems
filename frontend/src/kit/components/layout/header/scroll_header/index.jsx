@@ -5,7 +5,7 @@ import { StyledHeader } from './styles';
 export default function ScrollHeader(props = { show: true }) {
   return (
     <StyledHeader show={props.show}>
-      <UpperHeader scrolled={true} />
+      <UpperHeader scrolled={true} open={props.open} setOpenMenu={props.setOpenMenu} />
     </StyledHeader>
   );
 }

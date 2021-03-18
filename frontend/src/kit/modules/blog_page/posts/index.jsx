@@ -1,14 +1,13 @@
 import React from 'react';
 import Section from '../../../components/section';
 import SectionHeader from '../../../components/section_header';
-import SectionH6 from '../../../components/section_h6';
 import { Link } from '@reach/router';
-import { Cards, Card, CardImg, CardBody, CardFooter, Button } from './styles';
+import { Cards, Card, CardImg, CardBody, CardFooter } from './styles';
 import Truncate from 'react-truncate';
 
 export default function Posts({posts}) {
   return (
-    <Section bg_color='lightgrey'>
+    <Section bg_color='white'>
       <SectionHeader color='grey'>
         <span>Наш</span> блог
       </SectionHeader>

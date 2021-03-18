@@ -15,7 +15,7 @@ export default function Section(props) {
 }
 
 Section.propTypes = {
-  bg_color: PT.oneOf(['lightgrey', 'darkgrey']),
+  bg_color: PT.oneOf(['lightgrey', 'darkgrey', 'white']),
   bg_img: PT.string,
   border_bottom: PT.bool,
 };

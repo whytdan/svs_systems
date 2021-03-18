@@ -10,8 +10,9 @@ const useStyles = makeStyles({
         backgroundRepeat: 'no-repeat',
         cursor: 'pointer',
         transition: '0.5s',
+        boxShadow: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',
         "&:hover" : { 
-            boxShadow: '7px 7px 10px 2px rgba(0,0,0,0.29)'
+            boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'
         }
     },
     projectCardImg: {

@@ -22,14 +22,12 @@ export default function Pricing() {
   }, [])
 
   return (
-    <Section bg_img='/images/pricing-bg.jpg'>
+    <Section bg_img='/images/contract-bg.jpeg'>
       <SectionHeader color='white'>
-        {/* <span>ОРГАНИЗАЦИЯ МЕРОПРИЯТИЙ</span> <br/> */}
         {eventsSectionData?.title} <br/>
       </SectionHeader>
 
-      <CardSecondaryText>
-      {/* Наша компания оказывает услуги по организации и полной логистической поддержке деловых мероприятий. Главными задачами являются создание и проведение бизнес-ивентов на профессиональном уровне, с использованием индивидуального подхода */}
+      <CardSecondaryText color='white'>
       {eventsSectionData?.description}
       </CardSecondaryText>
       
@@ -45,7 +43,6 @@ export default function Pricing() {
                 <div dangerouslySetInnerHTML={{
                    __html: event.description
                 }}>
-
                 </div>
               </CardBody>
             </Card>

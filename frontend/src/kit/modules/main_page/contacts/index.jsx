@@ -5,7 +5,7 @@ import { ContactsWrapper, Contact } from './styles';
 
 export default function Contacts(props) {
   return (
-    <Section bg_color='darkgrey'>
+    <Section bg_color='darkblue'>
       <ContactsWrapper>
         <Contact>
           <img src='/icons/location.png' alt='map-pin' />

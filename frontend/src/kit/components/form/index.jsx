@@ -31,7 +31,7 @@ const CustomTextField = withStyles({
       color: '#4f4f4f',
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: '#34dce3',
+      borderBottomColor: '#041c3f',
     },
   },
 })(TextField);

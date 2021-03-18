@@ -10,7 +10,6 @@ export default function LanguagesPage() {
     <Layout bottom_header={false} isLanguagesPage={true}>
       <main>
         <Languages service={"Английский/русский язык "}/>
-        <div style={{height: 100, backgroundColor:'#CFD8DB'}}></div>
       </main>
     </Layout>
   );

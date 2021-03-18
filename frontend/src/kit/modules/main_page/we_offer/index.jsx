@@ -22,7 +22,7 @@ export default function WeOffer() {
   }, [])
 
   return (
-    <Section bg_color='lightgrey'>
+    <Section bg_color='white'>
 
       <OffersAdminModal/>
 

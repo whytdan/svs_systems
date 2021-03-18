@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledBottomHeader = styled.div`
   display: ${(props) => (props.bottom_header === true ? 'block' : 'none')};
-  padding-top: 85px;
+  padding-top: 110px;
   padding-bottom: 110px;
   padding-left: 10%;
   padding-right: 10%;

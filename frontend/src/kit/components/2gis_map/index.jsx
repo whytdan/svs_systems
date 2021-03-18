@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-const DG = window.DG;
-
-const [x,y] = [42.882022, 74.577879];
+const DG = require('2gis-maps');
 
 export default function TwoGisMap() {
 
+    const [x,y] = [42.882022, 74.577879];
     const [map, setMap] = useState(null);
 
-    const addMarker = (x, y, popup)=>{
-        const p = DG.marker([x,y]).addTo(map);
+    const addMarker = async (x, y, popup)=>{
+        const p = await DG.marker([x,y]).addTo(map);
         if(popup) p.bindPopup(popup);
     }
 
@@ -26,6 +25,7 @@ export default function TwoGisMap() {
                 zoom: 18
             }));
         });
+
     },[]);
 
     return (

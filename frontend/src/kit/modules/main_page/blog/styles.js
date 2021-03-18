@@ -21,11 +21,11 @@ export const Cards = styled.div`
 export const Card = styled.div`
   margin-top: 30px;
   background: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   cursor: pointer;
   transition: 0.5s;
   &:hover{
-    -webkit-box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29); 
-    box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
 `;
 
@@ -78,7 +78,9 @@ export const Button = styled.button`
   font-weight: 700;
   transition: 0.3s;
   &:hover {
-    border: 2px solid #2cc3cb;
-    color: #2cc3cb;
+    /* border: 2px solid #2cc3cb;
+    color: #2cc3cb; */
+    border: 2px solid #041c3f;
+    color: #041c3f;
   }
 `;

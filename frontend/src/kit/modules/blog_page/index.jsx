@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import Layout from '../../components/layout'
 import Posts from './posts/index'
-import ScrollToTop from 'react-scroll-up';
 import { secondaryDataContext } from '../../../contexts/SecondaryDataContext';
 
 export default function BlogPage() {
