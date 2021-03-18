@@ -8,7 +8,6 @@ export default function Layout(props) {
     <div>
       <Header bottom_header={props.bottom_header} isLanguagesPage={props.isLanguagesPage}/>
       {props.children}
-      
       <ScrollUp />
       <Footer />
     </div>

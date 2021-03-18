@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  background-color: #cfd8dc;
+  /* background-color: #cfd8dc; */
+  background-color: #041c3f;
   padding: 45px 0 !important;
   @media (max-width: 700px) {
     padding: 30px 0 !important;
@@ -18,8 +19,10 @@ export const FooterLinks = styled.ul`
 
 export const LogoImg = styled.img`
   height: 30px;
-  filter: invert(61%) sepia(0%) saturate(7450%) hue-rotate(204deg)
-    brightness(114%) contrast(68%);
+  /* filter: invert(61%) sepia(0%) saturate(7450%) hue-rotate(204deg)
+    brightness(114%) contrast(68%); */
+
+  filter: brightness(0) invert(1);
   transition: 0.3s;
   &:hover {
     filter: invert(74%) sepia(54%) saturate(633%) hue-rotate(129deg)
@@ -28,7 +31,8 @@ export const LogoImg = styled.img`
 `;
 
 export const Copyright = styled.p`
-  color: #878787;
+  /* color: #878787; */
+  color: #fff;
   text-align: center;
   margin-top: 30px;
 

@@ -48,8 +48,10 @@ export const Button = styled.button`
   font-weight: 700;
   transition: 0.3s;
   &:hover {
-    border: 2px solid #2cc3cb;
-    color: #2cc3cb;
+    /* border: 2px solid #2cc3cb; */
+    /* color: #2cc3cb; */
+    border: 2px solid #041c3f;
+    color: #041c3f;
   }
 `;
 

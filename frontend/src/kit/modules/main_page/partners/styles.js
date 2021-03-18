@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Section = styled.div`
   padding: 40px 83px;
-  background-color: #cfd8dc;
+  /* background-color: #cfd8dc; */
+  background-color: #fff;
   /* border-top: 1px solid #4f4f4f; */
   @media (max-width: 700px) {
     padding: 30px 23px;
@@ -49,7 +50,7 @@ export const CustomerLogoHorizontal = styled.div`
       height: 40px;
     }
     &:hover {
-      box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
       opacity: 1;
     }
   }
@@ -70,7 +71,7 @@ export const CustomerLogoVertical = styled.div`
       height: 55px;
     }
     &:hover {
-      box-shadow: 7px 7px 10px 2px rgba(0,0,0,0.29);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
       opacity: 1;
     }
   }

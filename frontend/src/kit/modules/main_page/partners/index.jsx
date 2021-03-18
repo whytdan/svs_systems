@@ -4,7 +4,7 @@ import { CustomersWrapper, CustomerLogoHorizontal, CustomerLogoVertical, Section
 
 export default function Customers() {
   return (
-    <Section bg_color=''>
+    <Section>
       {/* <h1 style={{textAlign: 'center', marginBottom: 20, color: '#fff'}}>Партнеры</h1> */}
       <SectionHeader color="grey">
         Партнеры

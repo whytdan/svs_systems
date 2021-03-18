@@ -16,7 +16,7 @@ export default function Team() {
 
   return (
     <Section bg_img='/images/team_bg.jpg'>
-      <SectionHeader>
+      <SectionHeader color="white">
         {/* <span>Наша</span> команда */}
         {ourTeam?.title}
       </SectionHeader>

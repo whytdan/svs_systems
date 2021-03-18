@@ -6,7 +6,6 @@ import UpperHeader from './upper_header';
 import BurgerMenu from './burger_menu';
 import { Backdrop, StyledHeader } from './styles';
 
-//TODO: add changing background, white triangles at the bottom, BurgerMenu, ScrollHeader disappear animation
 export default function Header(props) {
   const [scrollHeader, setScrollHeader] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -30,8 +29,8 @@ export default function Header(props) {
   return (
     <>
       <BurgerMenu open={openMenu} setOpenMenu={setOpenMenu} />
-      <ScrollHeader show={scrollHeader} />
-      <StyledHeader bg_img='/images/header-bg2.jpg'>
+      <ScrollHeader show={scrollHeader} open={openMenu} setOpenMenu={setOpenMenu} />
+      <StyledHeader bg_img='/images/translate-bg2.jpeg'>
         <Backdrop>
           <UpperHeader scrolled={scrollHeader} isLanguagesPage={props.isLanguagesPage} open={openMenu} setOpenMenu={setOpenMenu} />
           <BottomHeader bottom_header={props.bottom_header} />
