@@ -27,7 +27,7 @@ export const StyledBottomHeader = styled.div`
   p {
     margin: 25px 0;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
   }
   @media (max-width: 1250px) {
     h2 {

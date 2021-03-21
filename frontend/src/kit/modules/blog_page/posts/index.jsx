@@ -9,7 +9,7 @@ export default function Posts({posts}) {
   return (
     <Section bg_color='white'>
       <SectionHeader color='grey'>
-        <span>Наш</span> блог
+        Наш блог
       </SectionHeader>
       <Cards>
         {

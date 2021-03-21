@@ -11,15 +11,20 @@ const fall_down = keyframes`
 `;
 
 export const StyledHeader = styled.div`
-  display: ${(props) => (props.show === true ? 'flex' : 'none')};
+  /* display: ${(props) => (props.show === true ? 'flex' : 'none')}; */
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 0;
   transition: 0.5s;
   opacity: 1 !important;
   z-index: 2;
-  animation: ${fall_down} 0.3s linear;
+  transform: translateY(0%);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* animation: ${fall_down} 0.3s linear; */
 
   @media (max-width: 425px) {
-    display: none !important;
+    /* display: none !important; */
   }
 `;
+

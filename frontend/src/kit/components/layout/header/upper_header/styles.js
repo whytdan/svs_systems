@@ -8,16 +8,9 @@ export const StyledUpperHeader = styled.div`
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  /* padding: ${(props) => (props.scrolled === true ? '10px 83px' : '15px 83px')}; */
   padding: 0 83px;
   min-width: 300px;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
   z-index: 1;
-  /* background-color: ${(props) =>
-    props.scrolled === true ? '#CFD8DB' : 'none'}; */
-
-  /* background-color: ${(props) =>
-    props.scrolled === true || props.isLanguagesPage === true ? '#fff' : '#fff'}; */
   background-color: #041c3f;
 
   @media (max-width: 425px) {
@@ -78,7 +71,7 @@ export const LogoStyledBg = styled.div`
 
   position: relative;
   background-color: #fff;
-  padding: 20px 0;
+  padding: 10px 0;
 
   &:before{
     position: absolute;
