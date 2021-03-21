@@ -29,10 +29,10 @@ export default function Projects(props) {
     <Section bg_color='white'>
       <div>
         <SectionHeader color='grey'>
-          {ourProjectsSectionData?.static.title}
+          {ourProjectsSectionData?.static?.title}
         </SectionHeader>
         <SectionH6 color='grey'>
-          {ourProjectsSectionData?.static.description}
+          {ourProjectsSectionData?.static?.description}
         </SectionH6>
         <ProjectsCards>
           {
