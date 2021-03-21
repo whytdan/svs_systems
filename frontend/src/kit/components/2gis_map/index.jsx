@@ -1,11 +1,23 @@
+import { makeStyles } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
 const DG = require('2gis-maps');
+
+const useStyles = makeStyles(theme => ({
+    map: {
+        height: 500,
+        width: '100%',
+        [theme.breakpoints.down('md')]: {
+            height: 200
+          },
+    }
+}))
 
 export default function TwoGisMap() {
 
     const [x,y] = [42.882022, 74.577879];
     const [map, setMap] = useState(null);
+    const classes = useStyles();
 
     const addMarker = async (x, y, popup)=>{
         const p = await DG.marker([x,y]).addTo(map);
@@ -29,6 +41,6 @@ export default function TwoGisMap() {
     },[]);
 
     return (
-        <div id="map" style={{width: '100%', height: 500}}></div>
+        <div id="map" className={classes.map}></div>
     )
 }

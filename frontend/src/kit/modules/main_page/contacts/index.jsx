@@ -13,7 +13,7 @@ export default function Contacts(props) {
         </Contact>
         <Contact>
           <img src='/icons/mail.png' alt='map-pin' />
-          <p>info@svs.kg</p>
+          <a href="mailto:info@svs.kg">info@svs.kg</a>
         </Contact>
         <Contact>
           <img src='/icons/phone.png' alt='map-pin' />

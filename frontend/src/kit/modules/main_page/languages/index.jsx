@@ -46,7 +46,7 @@ export default function Languages({ service }) {
                   {
                     language.services.map(service => (
                       <li key={service.id}>
-                        <img src='/icons/arrow-right.png' alt='arrow' />
+                        <img src='/icons/translating.svg' alt='arrow' />
                         <span>{service.title}</span>
                       </li>
                     ))

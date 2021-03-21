@@ -9,7 +9,7 @@ export default function Posts({projects}) {
   return (
     <Section bg_color='white'>
       <SectionHeader color='grey'>
-        <span>Нашe</span> портфолио
+        Нашe портфолио
       </SectionHeader>
       <Cards>
         {

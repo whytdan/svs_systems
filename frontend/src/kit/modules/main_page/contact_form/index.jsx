@@ -7,7 +7,7 @@ export default function ContactForm(props) {
   return (
     <Section bg_color='white'>
       <SectionHeader color='grey'>
-        <span>Форма</span> заявки
+        Форма заявки
         <Form />
       </SectionHeader>
     </Section>
