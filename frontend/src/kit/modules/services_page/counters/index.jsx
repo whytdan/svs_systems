@@ -1,9 +1,8 @@
 import React from "react"
 import style from "./style.module.scss"
 import {
-  AiOutlineCalendar,
-  BsFillStarFill, FaCalendar, FaRegCalendar,
-  FiThumbsUp, GrFormCalendar,
+  BsFillStarFill, FaCalendar,
+  FiThumbsUp,
   MdPerson
 } from "react-icons/all";
 import SectionHeader from "../../../components/section_header";
