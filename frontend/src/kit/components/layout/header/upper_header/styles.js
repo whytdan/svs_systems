@@ -17,7 +17,6 @@ export const StyledUpperHeader = styled.div`
     justify-content: space-around;
     padding: 0px !important;
     align-items: center;
-    /* background-color: #fff; */
   }
   img {
     display: none;
@@ -97,11 +96,12 @@ export const LogoStyledBg = styled.div`
     height: 100%;
     background: inherit;
     z-index: -1;
-    width: 140px;
-    transform: translateX(40%) skewX(-45deg);
+    width: 130px;
+    transform: translateX(73%) skewX(-45deg);
 
     @media (max-width: 425px) {
       width: 95px;
+      transform: translateX(45%) skewX(-45deg);
     }
 
   }

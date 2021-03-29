@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { StyledHeader, StyledLink } from './styles';
+import React, {useState} from 'react';
+import {StyledHeader, StyledLink} from './styles';
+import useWindowSize from "./useWindowSize";
 
 export default function BurgerMenu({open, setOpenMenu}) {
 
+  const windowSize = useWindowSize();
 
   return (
-    <StyledHeader style={{height: open ? 336 : 0, opacity: open ? 1: 0}}>
+    <StyledHeader style={{height: open && windowSize < 1150 ? 336 : 0, opacity: open && windowSize < 1150 ? 1 : 0}}>
       <nav>
-        {
-          open ? (
+	      {
+	        open ? (
             <>
               <NavLink to='/'>Главная</NavLink>
               <NavLink to='/about'>О нас</NavLink>
@@ -25,16 +27,12 @@ export default function BurgerMenu({open, setOpenMenu}) {
   );
 }
 
-// @media (max-width: 1080px) {
-//   display: none; //should be block
-// }
-
 function NavLink(props) {
-  return (
+	return (
     <StyledLink
       {...props}
-      getProps={({ isCurrent }) => {
-        return {
+      getProps={({isCurrent}) => {
+      	return {
           style: {
             color: isCurrent ? '#ffffff' : '#838583',
             background: isCurrent ? '#34dce3' : '#ffffff',
