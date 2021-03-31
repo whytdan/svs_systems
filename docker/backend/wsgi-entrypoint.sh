@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#!/bin/sh
-
 until cd /app/backend/src
 do
     echo "Waiting for server volume..."
@@ -16,4 +14,3 @@ done
 ./manage.py collectstatic --noinput
 
 gunicorn src.wsgi --bind 0.0.0.0:8000 --workers 2 --threads 2
-
