@@ -18,10 +18,8 @@ export default function MainPage() {
         <WeOffer />
         <Features />
         <Projects />
-        {/* <Languages /> */}
         <Blog />
         <Partners />
-        {/* <GoogleMap /> */}
         <TwoGisMap/>
         <Contacts />
         <ContactForm />
