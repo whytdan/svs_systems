@@ -1,0 +1,21 @@
+.cell {
+  h4 {
+    font-size: 20px;
+    line-height: 20px;
+    color: #4f4f4f;
+    letter-spacing: -.3px;
+    font-weight: 400;
+    margin: 45px 0 15px;
+  }
+
+  p {
+    font-weight: 300;
+    vertical-align: top;
+  }
+
+  @media (max-width: 860px) {
+    h4 {
+      margin: 25px 0 10px;
+    }
+  }
+}

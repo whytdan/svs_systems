@@ -1,0 +1,63 @@
+.mainCont {
+  background: url("./assets/services-features.jpg");
+  padding-top: 105px;
+  padding-bottom: 120px;
+
+  .title {
+    width: 600px;
+    margin: 0 auto;
+    @media (max-width: 1250px) {
+      width: 600px;
+    }
+    @media (max-width: 900px) {
+      width: 500px;
+    }
+    @media (max-width: 500px) {
+      width: 300px;
+    }
+  }
+
+  .table {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    @media (max-width: 1250px) {
+      width: 860px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+    }
+    @media (max-width: 900px) {
+      width: 300px;
+      grid-template-columns: 1fr;
+      grid-row-gap: 15px;
+    }
+
+    .cell {
+      background: #fff;
+      padding: 20px 30px 30px;
+
+      h3 {
+        color: #4f4f4f !important;
+        margin: 20px 0 15px;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: -.4px;
+        font-weight: 500;
+        transition: .1s ease-in-out;
+        cursor: pointer;
+      }
+
+      h3:hover {
+        color: #15dde4 !important;
+      }
+
+      p {
+        font-weight: 300;
+      }
+    }
+  }
+
+}

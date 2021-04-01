@@ -1,0 +1,109 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  font-weight: normal;
+}
+
+h6 {
+  font-size: 17px;
+  line-height: 24px;
+  color: #4f4f4f;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 20px;
+  color: #4f4f4f;
+  letter-spacing: -0.3px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 20px;
+  color: #4f4f4f;
+  font-weight: 500;
+}
+
+p {
+  font-size: 15px;
+  line-height: 25px;
+  color: #4f4f4f;
+  font-weight: normal;
+}
+
+button,
+input[type='button'] {
+  background: none;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  outline-offset: 0;
+  cursor: pointer;
+  font-weight: normal;
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='color'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='range'],
+input[type='search'],
+input[type='tel'],
+input[type='date'],
+input[type='password'],
+input[type='number'],
+textarea {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  vertical-align: baseline;
+  box-shadow: none;
+  font-size: 15px;
+  color: #4f4f4f;
+  font-weight: normal;
+}
+
+
+.Toastify__toast--success{
+  font-size: 16px;
+}
+
+.Toastify__toast--error{
+  font-size: 16px;
+}
