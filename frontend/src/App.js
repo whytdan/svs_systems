@@ -15,6 +15,8 @@ import { toast } from "react-toastify";
 import 'firebase/auth';
 import MainDataProvider from './contexts/MainDataContext';
 import SecondaryDataProvider from './contexts/SecondaryDataContext';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 toast.configure();
 
