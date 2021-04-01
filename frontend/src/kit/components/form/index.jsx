@@ -108,7 +108,7 @@ export default function ApplicationForm() {
         Host: "smtp.gmail.com",
         Username: REACT_APP_EMAIL_SERVICE_LOGIN,
         Password: REACT_APP_EMAIL_SERVICE_PASSWORD,
-        To: "info@svs.kg",
+        To: "whytdan@gmail.com",
         From: REACT_APP_EMAIL_SERVICE_LOGIN,
         Subject: `Новое сообщение на сайте svs.kg от ${values.fullName}`,
         Body: values.message
