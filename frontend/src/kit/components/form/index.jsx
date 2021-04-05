@@ -112,7 +112,7 @@ export default function ApplicationForm() {
         To: 'whytdan@gmail.com',
         From: REACT_APP_EMAIL_SERVICE_LOGIN,
         Subject: `Новое сообщение на сайте svs.kg от ${values.fullName}`,
-        Body: `${values.message} ${values?.email ? `Почта отправителя: ${values.email}` : `Номер Телефона: ${values.phone_number}`}`
+        Body: `${values.message} ${values?.email ? `Почта отправителя: ${values.email}` : `Номер Телефона: ${values.phoneNumber}`}`
       })
     }).catch(() => {
       notifyRequestDecline()
