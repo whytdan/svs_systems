@@ -10,7 +10,6 @@ import { Field, Form, Formik } from 'formik';
 
 export default function OffersAdminModal() {
 	const [open, setOpen] = React.useState(false);
-	// const [currentAdmin] = React.useContext(adminContext);
 
 	const initialValues = {
 		title: "",
@@ -28,14 +27,6 @@ export default function OffersAdminModal() {
 
 	return (
 		<div>
-			{/* {
-				currentAdmin ? (
-					<IconButton style={{ position: 'absolute', right: 20 }} onClick={handleClickOpen}>
-						<EditIcon color="primary" />
-					</IconButton>
-				) : null
-			} */}
-
 			<Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" fullWidth maxWidth="md">
 				<Formik
 					initialValues={initialValues}
@@ -69,16 +60,6 @@ export default function OffersAdminModal() {
 									style={{marginTop: 25}}
 									label="Описание"
 								/>
-
-								{/* <TextField
-									autoFocus
-									margin="dense"
-									id="name"
-									label="Email Address"
-									type="email"
-									fullWidth
-								/> */}
-
 
 								<DialogActions>
 									<Button onClick={handleClose} color="primary">

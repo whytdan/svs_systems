@@ -41,11 +41,11 @@ export const StyledLogo = styled.div`
     align-items: center;
     img {
       width: auto;
-      height: 80px;
+      height: 90px;
       margin-left: 20px;
       /* margin-right: 10px; */
       @media (max-width: 425px) {
-        height: 60px;
+        height: 70px;
         margin-left: 0px;
         margin-right: 10px;
       }
@@ -80,10 +80,10 @@ export const LogoStyledBg = styled.div`
     background: inherit;
     z-index: -1;
     transform: translateX(-40%) skewX(-45deg);
-    width: 160px;
+    width: 340px;
 
     @media (max-width: 425px) {
-      width: 130px;
+      width: 270px;
     }
 
   }

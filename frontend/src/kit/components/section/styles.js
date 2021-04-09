@@ -8,7 +8,7 @@ export const StyledSection = styled.section`
     props.bg_color === 'lightgrey'
       ? '#cfd8dc'
       : props.bg_color === 'darkgrey'
-      ? '#4f4f4f' 
+      ? '#0f0f0f' 
       : props.bg_color === 'white' 
       ? '#ffffff'
       : props.bg_color === 'darkblue' ?

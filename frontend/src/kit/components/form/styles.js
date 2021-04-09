@@ -20,7 +20,7 @@ export const Input = styled.input`
   border-bottom: 1px solid #878787 !important;
   font-size: 16px;
   line-height: 20px;
-  color: #4f4f4f !important;
+  color: #0f0f0f !important;
   margin-top: 30px;
   padding: 10px;
 `;
@@ -34,7 +34,7 @@ export const Textarea = styled.textarea`
   width: 100%;
   font-size: 16px;
   line-height: 20px;
-  color: #4f4f4f !important;
+  color: #0f0f0f !important;
   margin-top: 30px;
   padding: 10px;
 `;

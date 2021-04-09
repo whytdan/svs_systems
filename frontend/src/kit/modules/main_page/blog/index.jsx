@@ -6,7 +6,7 @@ import { Cards, Card, CardImg, CardBody, CardFooter, Button } from './styles';
 import { mainDataContext } from '../../../../contexts/MainDataContext';
 import Truncate from 'react-truncate';
 
-export default function Blog(props) {
+export default function Blog() {
 
   const { mainPosts, fetchMainPosts } = useContext(mainDataContext)
 
@@ -19,11 +19,7 @@ export default function Blog(props) {
       <SectionHeader color='grey'>
       Наши последние публикации
       </SectionHeader>
-      {/* <SectionH6 color='grey'>
-        
-      </SectionH6> */}
       <Cards>
-
         {
           mainPosts && mainPosts.map(post => (
           <Link to={`/blog/${post.id}`} key={post.id}>

@@ -5,11 +5,8 @@ import Layout from '../../components/layout';
 import style from "./style.module.scss";
 import {Image, Wrapper} from './styles';
 import Slider from "react-slick";
-import {ImMagicWand} from "react-icons/all";
-
 
 export default function BlogDetailPage() {
-
   const {fetchPost, postDetail} = useContext(secondaryDataContext);
   const {postId} = useParams();
   const settings = {
@@ -20,7 +17,6 @@ export default function BlogDetailPage() {
     slidesToScroll: 1
   };
 
-
   useEffect(() => {
     fetchPost(postId)
   }, [])
@@ -30,13 +26,6 @@ export default function BlogDetailPage() {
       <main>
         <Wrapper>
           <div className={style.cell}>
-            {/*<div className={style.sliderWrapper}>*/}
-            {/*  <Slider {...settings}>*/}
-            {/*    {postDetail?.images.map(image => (*/}
-            {/*      <Image img={image.file} />*/}
-            {/*    ))}*/}
-            {/*  </Slider>*/}
-            {/*</div>*/}
             <div className={style.sliderWrapper}>
               <Slider {...settings} className={{cursor: "pointer"}}>
                 {
@@ -49,9 +38,6 @@ export default function BlogDetailPage() {
                 }
               </Slider>
             </div>
-
-            {/*<Image img={postDetail?.images[0].file} />*/}
-
             <span>{postDetail?.created_on}</span>
             <h4>{postDetail?.title}</h4>
 
@@ -59,7 +45,6 @@ export default function BlogDetailPage() {
               __html: postDetail?.description
             }}>
             </div>
-
           </div>
         </Wrapper>
       </main>

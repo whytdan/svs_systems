@@ -12,7 +12,7 @@ export default function Header(props) {
   return (
     <>
       <ScrollHeader open={openMenu} setOpenMenu={setOpenMenu} />
-      <StyledHeader bg_img='/images/translate-bg2.jpeg'>
+      <StyledHeader bg_img='/images/hero_bg4.jpeg'>
         <Backdrop>
           <BottomHeader bottom_header={props.bottom_header} />
         </Backdrop>

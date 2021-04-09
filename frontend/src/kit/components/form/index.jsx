@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 const CustomTextField = withStyles({
   root: {
     '& label.Mui-focused': {
-      color: '#4f4f4f',
+      color: '#0f0f0f',
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: '#041c3f',

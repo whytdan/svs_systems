@@ -5,7 +5,6 @@ import { CustomersWrapper, CustomerLogoHorizontal, CustomerLogoVertical, Section
 export default function Customers() {
   return (
     <Section>
-      {/* <h1 style={{textAlign: 'center', marginBottom: 20, color: '#fff'}}>Партнеры</h1> */}
       <SectionHeader color="grey">
         Партнеры
       </SectionHeader>
@@ -52,10 +51,6 @@ export default function Customers() {
         <CustomerLogoHorizontal>
           <img src='/logos/UNHR.png' alt='unhr-logo' />
         </CustomerLogoHorizontal>
-        {/* <CustomerLogoHorizontal>
-          <img src='/logos/UNFPA.png' alt='UNFPA-logo' />
-        </CustomerLogoHorizontal> */}
-
       </CustomersWrapper>
     </Section>
   );

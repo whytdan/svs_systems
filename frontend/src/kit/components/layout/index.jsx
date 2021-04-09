@@ -3,6 +3,7 @@ import PT from 'prop-types';
 import Header from './header';
 import Footer from './footer';
 import ScrollUp from '../scroll_up';
+
 export default function Layout(props) {
   return (
     <div>

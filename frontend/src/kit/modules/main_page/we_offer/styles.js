@@ -42,7 +42,7 @@ export const CardIcon = styled.div`
 
 export const CardTitle = styled.h3`
   grid-area: title;
-  color: #4f4f4f;
+  color: #0f0f0f;
   span {
     font-weight: 300;
   }

@@ -6,16 +6,6 @@ import {ProjectsCards, Button} from './styles';
 import ProjectCard from './ProjectCard'
 import { mainDataContext } from '../../../../contexts/MainDataContext';
 import { Link } from '@reach/router';
-import { useHistory } from 'react-router-dom';
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4
-};
-
 
 export default function Projects(props) {
 
@@ -46,7 +36,6 @@ export default function Projects(props) {
         <Link to="/portfolio">
           <Button type='submit'>Больше</Button>
         </Link>
-
       </div>
     </Section>
   );

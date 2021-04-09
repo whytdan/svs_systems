@@ -7,7 +7,9 @@ export const StyledBottomHeader = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   text-align: center;
-  color: #fff;
+  //color: #fff;
+  //color: #0f0f0f;
+  color: #0f0f0f;
   font-size: 16px;
   line-height: 24px;
   position: relative;
@@ -20,13 +22,12 @@ export const StyledBottomHeader = styled.div`
     line-height: 50px;
     letter-spacing: 1px;
     span {
-      font-weight: 700;
       letter-spacing: 0;
     }
   }
   p {
+    color: #0f0f0f;
     margin: 25px 0;
-    color: #ffffff;
     font-size: 18px;
   }
   @media (max-width: 1250px) {
@@ -42,7 +43,7 @@ export const StyledBottomHeader = styled.div`
     }
   }
   @media (max-width: 500px) {
-        h2 {
+    h2 {
       font-size: 34px;
     }
   }

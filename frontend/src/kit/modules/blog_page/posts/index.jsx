@@ -39,8 +39,6 @@ export default function Posts({posts}) {
           ))
         }
       </Cards>
-
-
     </Section>
   );
 }

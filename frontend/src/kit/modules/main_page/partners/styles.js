@@ -4,7 +4,7 @@ export const Section = styled.div`
   padding: 40px 83px;
   /* background-color: #cfd8dc; */
   background-color: #fff;
-  /* border-top: 1px solid #4f4f4f; */
+  /* border-top: 1px solid #0f0f0f; */
   @media (max-width: 700px) {
     padding: 30px 23px;
   }

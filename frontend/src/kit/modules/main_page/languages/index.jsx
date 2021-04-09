@@ -8,8 +8,6 @@ import {
   List,
 } from './styles';
 
-// TODO: How to render language lists???
-
 const useStyles = makeStyles({
   languageServices: {
     maxWidth: 350,
@@ -34,7 +32,6 @@ export default function Languages({ service }) {
     <Section bg_img='/images/bg-2.jpg'>
       <Wrapper>
         <Grid container spacing={3} justify="center" className={classes.container}>
-
           {
             languages?.length && languages.map(language => (
               <Grid item xs={12} md={6} className={classes.languageServices} key={language.id}>
@@ -55,7 +52,6 @@ export default function Languages({ service }) {
               </Grid>
             ))
           }
-
         </Grid>
       </Wrapper>
     </Section>

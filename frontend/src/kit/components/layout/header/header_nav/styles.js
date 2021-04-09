@@ -14,7 +14,7 @@ export const StyledNav = styled.nav`
       a {
         text-transform: uppercase;
         /* color: #ffffff; */
-        /* color: #4f4f4f; */
+        /* color: #0f0f0f; */
         font-size: 18px;
         transition: 0.3s;
         &:hover {

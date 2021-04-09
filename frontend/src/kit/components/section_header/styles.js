@@ -5,7 +5,7 @@ export const StyledSectionHeader = styled.h2`
   line-height: 42px;
   font-weight: normal;
   color: ${(props) =>
-  props.color === 'grey' ? '#4f4f4f' : props.color === 'white' ? '#ffffff' : '#4f4f4f'};
+  props.color === 'grey' ? '#0f0f0f' : props.color === 'white' ? '#ffffff' : '#0f0f0f'};
   letter-spacing: -0.5px;
   text-align: center;
   span {

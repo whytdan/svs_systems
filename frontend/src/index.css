@@ -26,28 +26,28 @@ a {
 h6 {
   font-size: 17px;
   line-height: 24px;
-  color: #4f4f4f;
+  color: #0f0f0f;
   font-weight: normal;
 }
 
 h4 {
   font-size: 20px;
   line-height: 20px;
-  color: #4f4f4f;
+  color: #0f0f0f;
   letter-spacing: -0.3px;
 }
 
 h3 {
   font-size: 20px;
   line-height: 20px;
-  color: #4f4f4f;
+  color: #0f0f0f;
   font-weight: 500;
 }
 
 p {
   font-size: 15px;
   line-height: 25px;
-  color: #4f4f4f;
+  color: #0f0f0f;
   font-weight: normal;
 }
 
@@ -95,7 +95,7 @@ textarea {
   vertical-align: baseline;
   box-shadow: none;
   font-size: 15px;
-  color: #4f4f4f;
+  color: #0f0f0f;
   font-weight: normal;
 }
 
