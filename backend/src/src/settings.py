@@ -26,7 +26,7 @@ SECRET_KEY = 'yx4u=50iwya_4(x_96)*f_5a!6!%xrb$rrbmy!*yy2p@)_)h)^'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '164.90.160.5', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '164.90.160.5', '127.0.0.1', 'svs.kg']
 
 # Application definition
 
