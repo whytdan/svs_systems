@@ -19,8 +19,8 @@ export default function MainPage() {
         <Blog />
         <Partners />
         <ContactForm />
-        <TwoGisMap/>
         <Contacts />
+        <TwoGisMap/>
       </main>
     </Layout>
   );
