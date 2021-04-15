@@ -8,9 +8,9 @@ export default function ContactPage(props) {
   return (
     <Layout bottom_header={false}>
       <main>
-        <TwoGisMap/>
         <Contacts />
         <ContactForm />
+        <TwoGisMap/>
       </main>
     </Layout>
   );
