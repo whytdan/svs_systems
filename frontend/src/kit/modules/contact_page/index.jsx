@@ -8,8 +8,8 @@ export default function ContactPage(props) {
   return (
     <Layout bottom_header={false}>
       <main>
-        <Contacts />
         <ContactForm />
+        <Contacts />
         <TwoGisMap/>
       </main>
     </Layout>
