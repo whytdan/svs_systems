@@ -1,37 +1,62 @@
 version: '3.3'
 
 services:
-    backend:
-      restart: unless-stopped
-      build:
-        context: .
-        dockerfile: ./docker/backend/Dockerfile
-      volumes:
-          - static_volume:/app/backend/src/staticfiles
-          - media_volume:/app/backend/src/media
-      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
-      networks:
-        - my-network
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - my-network
+    environment:
+      - POSTGRES_USER=svs
+      - POSTGRES_PASSWORD=svs
+      - POSTGRES_DB=svs
 
-    nginx:
-      restart: unless-stopped
-      build:
-        context: .
-        dockerfile: ./docker/nginx/Dockerfile
-      ports:
-        - 80:80
-      volumes:
-        - ./docker/nginx:/etc/nginx/conf.d
-        - static_volume:/app/backend/src/staticfiles
-        - media_volume:/app/backend/src/media
-      networks:
-        - my-network
-      depends_on:
-        - backend
+  backend:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+    volumes:
+      - static_volume:/app/backend/src/staticfiles
+      - media_volume:/app/backend/src/media
+    entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+    networks:
+      - my-network
+    depends_on:
+      - db
+
+  nginx:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./docker/nginx/prod:/etc/nginx/conf.d
+      - static_volume:/app/backend/src/staticfiles
+      - media_volume:/app/backend/src/media
+      - ./docker/nginx/certbot/conf:/etc/letsencrypt
+      - ./docker/nginx/certbot/www:/var/www/certbot
+    networks:
+      - my-network
+    depends_on:
+      - backend
+
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./docker/nginx/certbot/conf:/etc/letsencrypt
+      - ./docker/nginx/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   static_volume:
   media_volume:
+  postgres_data:
 
 networks:
   my-network:
