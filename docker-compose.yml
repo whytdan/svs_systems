@@ -1,16 +1,6 @@
 version: '3.3'
 
 services:
-  db:
-    image: postgres:12.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    networks:
-      - my-network
-    environment:
-      - POSTGRES_USER=svs
-      - POSTGRES_PASSWORD=svs
-      - POSTGRES_DB=svs
 
   backend:
     restart: unless-stopped
@@ -20,6 +10,7 @@ services:
     volumes:
       - static_volume:/app/backend/src/staticfiles
       - media_volume:/app/backend/src/media
+      - db_volume:/app/backend/src/db.sqlite3
     entrypoint: /app/docker/backend/wsgi-entrypoint.sh
     networks:
       - my-network
@@ -56,7 +47,7 @@ services:
 volumes:
   static_volume:
   media_volume:
-  postgres_data:
+  db_volume:
 
 networks:
   my-network:
