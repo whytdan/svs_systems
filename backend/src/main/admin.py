@@ -163,6 +163,3 @@ admin.site.register(OurProjectsSection, OurProjectsSectionAdmin)
 # admin.site.register(FourthServiceSection, FourthServiceSectionAdmin)
 # admin.site.register(FifthServiceSection, FifthServiceSectionAdmin)
 admin.site.register(LanguageServicesList, LanguageServicesListAdmin)
-
-
-
