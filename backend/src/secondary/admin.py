@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import *
 
 class PortfolioProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'made_on', 'description', 'image' )
+    list_display = ('title', 'made_on', 'description',)
+
 
 
 class PostImageInline(admin.TabularInline):
