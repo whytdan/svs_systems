@@ -11,7 +11,7 @@ class PortfolioProject(models.Model):
 
     def __str__(self):
         return self.title
-b
+
     class Meta:
         verbose_name = 'Проект из портфолио'
         verbose_name_plural = 'Проекты из портфолио'
