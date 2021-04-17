@@ -156,7 +156,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://164.90.160.5',
     'http://localhost:3000',
     'http://svs.kg',
-    'https://svs.kg/'
     'http://www.svs.kg',
     'https://www.svs.kg',
 ]

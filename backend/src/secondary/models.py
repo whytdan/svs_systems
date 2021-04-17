@@ -22,7 +22,6 @@ class Post(models.Model):
     title = models.CharField('Заголовок', max_length=255)
     created_at = models.DateField('Дата создания поста')
     description = RichTextField('Описание поста')
-    image = models.ImageField('Изоброжение проекта', upload_to="portfolio_images")
     is_main = models.BooleanField('Показывать на главной странице', default=False)
 
     def __str__(self):
