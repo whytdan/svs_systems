@@ -1,4 +1,5 @@
 from django.contrib import admin
+from .forms import RequiredInlineFormSet
 from .models import *
 
 class PortfolioProjectAdmin(admin.ModelAdmin):
@@ -6,7 +7,8 @@ class PortfolioProjectAdmin(admin.ModelAdmin):
 
 class PostImageInline(admin.TabularInline):
     model = PostImage
-    extra = 0
+    extra = 1
+    formset = RequiredInlineFormSet
 
 
 class PostAdmin(admin.ModelAdmin):
